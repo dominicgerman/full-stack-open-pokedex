@@ -31,7 +31,10 @@ jobs:
           build: npm run build
           start: npm run start-prod
           wait-on: http://localhost:5000
-      if: ${{ github.event_name == 'push' }}
+  deployment:
+    if: ${{ github.event_name == 'push' }}
+    needs: [simple_deployment_pipeline]
+    runs-on: ubuntu-20.04
       - name: deploy to fly.io
         uses: superfly/flyctl-actions/setup-flyctl@master
         run: flyctl deploy --remote-only
