@@ -3,3 +3,5 @@ Buddy is an alternative option for CI/CD for Ruby. It is supposed to remove the 
 It looks like Buddy is more of a self-hosting solution than a cloud based solution. It has a lot of features and seems to be geared towards large projects. It seems very customizable. Basically it seems like a way easier to use version of Jenkins. I don't really know what Jenkins offers but Buddy supports a lot of different stuff. Buddy is a web-based software though so maybe it works for cloud environments too? I don't know!
 
 This is a test for exercise 13.
+
+More changes! For exercise 14!
