@@ -1,5 +1,10 @@
 #!/bin/bash
 
-echo "Hello from shell script"
+response=$(curl https://holy-bush-484.fly.dev/health)
 
-exit 0 # exit status 1 means that the script "fails"
+case "$response" in
+    #case: test passes
+    "ok") exit 0 ;;
+esac
+
+exit 1
