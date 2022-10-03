@@ -33,7 +33,7 @@ jobs:
           start: npm run start-prod
           wait-on: http://localhost:5000
   tag_release:
-    if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message), '#skip') }}
     needs: [pre_deployment_pipeline]
     runs-on: ubuntu-20.04
     steps:
@@ -44,7 +44,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
   deployment:
-    if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message), '#skip') }}
     needs: [pre_deployment_pipeline]
     runs-on: ubuntu-20.04
     steps:
