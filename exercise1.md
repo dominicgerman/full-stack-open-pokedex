@@ -5,3 +5,5 @@ It looks like Buddy is more of a self-hosting solution than a cloud based soluti
 This is a test for exercise 13.
 
 More changes! For exercise 14!
+
+Testing, testing!
